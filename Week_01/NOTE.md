@@ -17,3 +17,14 @@
     for(int i = index;i<nums.length;i++>){
         nums[i]=0;
     }
+2 移动0可以联想到快速排序思想，可以选择0作为pivot，然后将所有不是0的(小于pivot的)移动到0的左边
+    int pivot = 0;
+    int leftIndex = 0;
+    for(int i = 0;i<nums.length;i++){
+        if(nums[i]!=pivot){
+            //交换枢纽元
+            swap(nums,leftIndex,i);
+            //移动左边界
+            leftIndex++;
+        }
+    }
