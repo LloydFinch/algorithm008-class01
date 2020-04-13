@@ -16,4 +16,15 @@ class Solution {
             nums[index] = 0;
         }
     }
+
+    //有bug，只是记录一下这种思路
+    public void moveZeroes2(int[] nums){
+        int leftIndex = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[leftIndex] = (nums[i] ^= nums[leftIndex] ^= nums[i]) ^ nums[leftIndex];
+                leftIndex++;
+            }
+        }
+    } 
 }
