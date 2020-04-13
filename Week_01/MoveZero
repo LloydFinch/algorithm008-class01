@@ -1,0 +1,19 @@
+//移动0到数组末尾
+class Solution {
+
+    public void moveZeroes(int[] nums){
+
+        //用来记录不为0的元素的最后一个下标
+        int lastIndex = 0;
+        for(int index = 0; index< nums.length; index++){
+            if(nums[index]!=0){
+                nums[lastIndex++] = nums[index];
+            }
+        }
+
+        //剩余元素全部置0
+        for(int index = lastIndex; index<nums.length; index++){
+            nums[index] = 0;
+        }
+    }
+}
