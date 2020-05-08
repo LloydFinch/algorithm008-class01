@@ -11,7 +11,6 @@ public class ReplaceSpace {
                 sb.append(chars[i]);
             }
         }
-
         return sb.toString();
     }
 }
