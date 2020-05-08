@@ -19,7 +19,7 @@ public class TwoSum {
     }
 
     /**
-     * 两遍HashMap
+     * 两遍HashMap，遍历添加一遍，比较一遍
      * 
      * @param nums
      * @param target
@@ -37,6 +37,27 @@ public class TwoSum {
             if (map.containsKey(result) && map.get(result) != i) {
                 return new int[] { i, map.get(result) };
             }
+        }
+
+        return null;
+    }
+
+    /**
+     * 一遍HashMap，遍历的添加的时候比较
+     * 
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int[] twoSum3(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int result = 0;
+        for (int i = 0; i < nums.length; i++) {
+            result = target - nums[i];
+            if (map.containsKey(result)) {
+                return new int[] { map.get(result), i };
+            }
+            map.put(nums[i], i);
         }
 
         return null;
